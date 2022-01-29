@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "custom-forms",
+    "slug": "custom-forms",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "custom-forms"
+}
