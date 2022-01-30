@@ -11,6 +11,8 @@
   "dependencies": {
     "@unimodules/core": "~7.2.0",
     "expo": "~44.0.2",
+    "expo-checkbox": "~2.0.0",
+    "expo-radio-button": "^1.0.8",
     "expo-splash-screen": "~0.14.1",
     "expo-status-bar": "~1.2.0",
     "react": "17.0.1",

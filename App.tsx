@@ -9,7 +9,7 @@ export default function App() {
   const formSchema: IFormSchema = {
     name: 'login-form',
     title: '1 - Formulário de Login',
-    shownTitle: true,
+    shownTitle: false,
     shownLabels: true,
     shownInputIcons: true,
     fields: [
@@ -47,13 +47,12 @@ export default function App() {
         placeholder: 'Digite sua senha',
         icon: 'lock',
         secureTextEntry: true,
-        colLenght: 2,
         validations: {
           required: true,
           minLength: 3,
           maxLength: 10,
           pattern: {
-            regex: '/^.*((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/',
+            regex: /^.*((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
             message: 'A senha deve conter pelo menos um caracter especial, um número e uma letra maiúscula.'
           }
         }
@@ -66,12 +65,44 @@ export default function App() {
         placeholder: 'Confirme sua senha',
         icon: 'lock',
         secureTextEntry: true,
-        colLenght: 2,
         validations: {
           required: true,
           confirmed: 'password',
           minLength: 3,
           maxLength: 10
+        }
+      },
+      {
+        name: 'terms',
+        type: 'checkbox',
+        checkBoxGroup: false,
+        label: 'Concorda com os termos de uso',
+        colLenght: 2,
+        validations: {
+          required: true
+        }
+      },
+      {
+        name: 'rememberMe',
+        type: 'checkbox',
+        checkBoxGroup: false,
+        label: 'Lembrar-me',
+        colLenght: 2,
+        validations: {
+          required: true
+        }
+      },
+      {
+        name: 'escolha',
+        type: 'radio',
+        label: 'Escolha uma opção',
+        selectItems: [
+          { value: '1', label: 'Sim' },
+          { value: '2', label: 'Não' },
+          { value: '3', label: 'Não Informado' }
+        ],
+        validations: {
+          required: true
         }
       }
     ]

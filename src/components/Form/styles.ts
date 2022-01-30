@@ -26,23 +26,15 @@ export const Title = styled.Text`
 `;
 
 export const FieldContainer = styled.View<IFieldContainerProps>`
-  width: ${props => props.length ? `${98 / props.length}%` : '100%'};
+  width: ${({ length }) => length ? `${(length === 1 ? 100 : 98) / length}%` : '100%'};
   align-items: center;
   justify-content: center;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 `;
 
 export const Label = styled.Text`
   text-align: left;
   font-size: 14px;
   width: 100%;
-  margin-left: 8px;
   margin-bottom: 6px;
-`;
-
-export const TextInput = styled.TextInput`
-  background-color: #fff;
-  width: 100%;
-  height: 50px;
-  font-size: 16px;
 `;

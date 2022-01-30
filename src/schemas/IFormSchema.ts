@@ -18,7 +18,7 @@ export interface IFormSchema {
 interface IFieldSelectItem {
   value: string;
   label: string;
-  icon: string;
+  icon?: string;
 }
 
 export interface IFieldSchema {
@@ -27,19 +27,20 @@ export interface IFieldSchema {
   value?: string | number | boolean | undefined;
   label?: string;
   icon?: React.ComponentProps<typeof Feather>['name'];
-  placeholder: string;
+  placeholder?: string;
   required?: boolean;
-  keyboardType: KeyboardType;
+  keyboardType?: KeyboardType;
   secureTextEntry?: boolean;
   colLenght?: number;
   selectItems?: IFieldSelectItem[];
+  checkBoxGroup?: boolean;
   validations?: {
     minLength?: number;
     maxLength?: number;
     required?: boolean;
     confirmed?: string;
     pattern?: {
-      regex: string;
+      regex: RegExp;
       message: string;
     };
     need?: [
