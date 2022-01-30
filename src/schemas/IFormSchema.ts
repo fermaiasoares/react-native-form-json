@@ -1,7 +1,7 @@
 import { Feather } from '@expo/vector-icons';
 import { KeyboardType } from "react-native";
 
-type IType = 'text' | 'email' | 'password' | 'number' | 'date' | 'date-time' | 'time' | 'checkbox' | 'radio' | 'select';
+type IType = 'text' | 'email' | 'password' | 'number' | 'date' | 'date-time' | 'time' | 'checkbox' | 'radio' | 'select' | 'textarea';
 
 export interface IFormSchema {
   id?: string | number;

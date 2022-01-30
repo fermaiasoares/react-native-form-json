@@ -117,6 +117,17 @@ export default function App() {
         validations: {
           required: true
         }
+      },
+      {
+        name: 'sobre',
+        type: 'textarea',
+        label: 'Sobre',
+        placeholder: 'Digite algo sobre você',
+        icon: 'edit',
+        validations: {
+          required: true,
+          minLength: 3
+        }
       }
     ]
   };

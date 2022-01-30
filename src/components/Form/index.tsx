@@ -9,6 +9,7 @@ import { Input } from './../Input';
 import { CheckBoxSingle } from './../CheckBoxSingle';
 import { Radio } from './../Radio';
 import { Select } from './../Select';
+import { TextArea } from './../TextArea';
 
 interface IProps {
   formData?: Object;
@@ -49,6 +50,13 @@ export function Form({ schema, formData }: IProps) {
 
               { ['select'].includes(field.type) && 
                 <Select field={field}/>
+              }
+
+              { ['textarea'].includes(field.type) && 
+                <TextArea 
+                  field={field}
+                  value={formData && formData[field.name]}
+                />
               }
             </FieldContainer>
           )}
