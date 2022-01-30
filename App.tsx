@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 
 import { Form } from './src/components/Form';
 import { IFormSchema } from 'schemas/IFormSchema';
@@ -77,7 +77,6 @@ export default function App() {
         type: 'checkbox',
         checkBoxGroup: false,
         label: 'Concorda com os termos de uso',
-        colLenght: 2,
         validations: {
           required: true
         }
@@ -87,7 +86,6 @@ export default function App() {
         type: 'checkbox',
         checkBoxGroup: false,
         label: 'Lembrar-me',
-        colLenght: 2,
         validations: {
           required: true
         }
@@ -104,20 +102,43 @@ export default function App() {
         validations: {
           required: true
         }
+      },
+      {
+        name: 'escolha',
+        type: 'select',
+        label: 'Escolha uma opção',
+        placeholder: 'Escolha uma opção',
+        icon: 'tag',
+        selectItems: [
+          { value: '1', label: 'Sim' },
+          { value: '2', label: 'Não' },
+          { value: '3', label: 'Não Informado' }
+        ],
+        validations: {
+          required: true
+        }
       }
     ]
   };
 
   return (
-    <View style={{
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-      paddingHorizontal: 30
-    }}>
-      <Form
-        schema={formSchema}
-      />
-    </View>
+    <ScrollView
+      showsVerticalScrollIndicator={false}
+      style={{ flex: 1 }}
+    >
+      <View
+        style={{
+          flex: 1,
+          alignItems: 'center',
+          justifyContent: 'center',
+          paddingHorizontal: 30,
+          paddingVertical: 40
+        }}
+      >
+        <Form
+          schema={formSchema}
+        />
+      </View>
+    </ScrollView>
   );
 }

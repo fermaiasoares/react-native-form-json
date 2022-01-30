@@ -19,6 +19,7 @@ interface IFieldSelectItem {
   value: string;
   label: string;
   icon?: string;
+  color?: string;
 }
 
 export interface IFieldSchema {

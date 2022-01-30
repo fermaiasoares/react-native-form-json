@@ -8,6 +8,7 @@ import { IFormSchema } from '../../schemas/IFormSchema';
 import { Input } from './../Input';
 import { CheckBoxSingle } from './../CheckBoxSingle';
 import { Radio } from './../Radio';
+import { Select } from './../Select';
 
 interface IProps {
   formData?: Object;
@@ -27,8 +28,8 @@ export function Form({ schema, formData }: IProps) {
             </Section>
           )}
 
-          { schema && schema.fields && schema.fields.map(field => 
-            <FieldContainer key={field.name} length={field.colLenght}>
+          { schema && schema.fields && schema.fields.map((field, index) => 
+            <FieldContainer key={index + 1} length={field.colLenght}>
               { field.label && schema.shownLabels && <Label>{field.label} {field.required ? '*' : ''}</Label> }
               { ['email', 'password', 'text', 'number'].includes(field.type) && 
                 <Input
@@ -44,6 +45,10 @@ export function Form({ schema, formData }: IProps) {
 
               { ['radio'].includes(field.type) && 
                 <Radio field={field}/>
+              }
+
+              { ['select'].includes(field.type) && 
+                <Select field={field}/>
               }
             </FieldContainer>
           )}
