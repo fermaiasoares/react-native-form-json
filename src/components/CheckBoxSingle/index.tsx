@@ -1,15 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { CheckboxProps } from 'expo-checkbox';
 
 import { Container, CheckBox, Title } from './styles';
 
-export function CheckBoxSingle() {
-  const [isChecked, setIsChecked] = useState(false);
+interface IProps extends CheckboxProps {}
+
+export function CheckBoxSingle({
+  value,
+  onChange,
+  ...rest
+}: IProps) {
+  const [isChecked, setIsChecked] = useState(value);
+
+  useEffect(() => {
+    setIsChecked(value)
+  }, [value]);
 
   return (
-    <Container onTouchStart={() => setIsChecked(!isChecked)}>
+    <Container>
       <CheckBox
-        value={isChecked}
         color={isChecked ? '#d35' : '#d3d3d3'}
+        value={value}
+        {...rest}
       />
 
       <Title>{isChecked ? 'Sim' : 'Não'}</Title>

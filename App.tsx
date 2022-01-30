@@ -91,7 +91,7 @@ export default function App() {
         }
       },
       {
-        name: 'escolha',
+        name: 'options',
         type: 'radio',
         label: 'Escolha uma opção',
         selectItems: [
@@ -147,6 +147,17 @@ export default function App() {
         }}
       >
         <Form
+          formData={{
+            nome: 'Fernando Maia',
+            email: 'fermaiasoares@aol.com',
+            password: '123456',
+            confirmPassword: '123456',
+            terms: true,
+            rememberMe: false,
+            options: '3',
+            escolha: '1',
+            sobre: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.'
+          }}
           schema={formSchema}
         />
       </View>

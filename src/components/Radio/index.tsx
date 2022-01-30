@@ -5,16 +5,16 @@ import { Container, RadioGroup, RadioItem } from './styles';
 
 interface IProps {
   field: IFieldSchema;
+  selected?: string;
+  onSelected?: (value: string) => void;
 }
 
-export function Radio({ field }: IProps) {
-  const [current, setCurrent] = useState('');
-
+export function Radio({ field, selected, onSelected }: IProps) {
   return (
     <Container>
       <RadioGroup
-        selected={current}
-        onSelected={setCurrent}
+        selected={selected}
+        onSelected={onSelected}
       >
         { field.selectItems && field.selectItems.map((item, index) => 
           <RadioItem key={index + 1} label={item.label} value={item.value} />

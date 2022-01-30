@@ -23,6 +23,7 @@ export const RadioGroup = styled(RadioButtonGroup).attrs({
     width: '100%',
     flexDirection: 'row',
     flexWrap: 'wrap',
+    justifyContent: 'space-between',
   }
 })``;
 

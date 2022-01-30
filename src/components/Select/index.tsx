@@ -5,11 +5,12 @@ import { Container, SelectIcon, SelectInput } from './styles';
 
 import { IFieldSchema } from 'schemas/IFormSchema';
 
-interface IProps extends PickerProps {
+export interface ISelectProps extends PickerProps {
   field: IFieldSchema;
+  error?: string;
 }
 
-export function Select({ field, ...rest }: IProps) {
+export function Select({ field, ...rest }: ISelectProps) {
   return (
     <Container>
 
