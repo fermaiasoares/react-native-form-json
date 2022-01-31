@@ -1,6 +1,16 @@
 {
-  "name": "custom-forms",
+  "name": "react-native-form-json",
   "version": "1.0.0",
+  "description": "React Native Form JSON",
+  "author": {
+    "name": "Fernando Maia",
+    "email": "fermaiasoares@aol.com"
+  },
+  "bugs": {
+    "url": "https://github.com/fermaiasoares/react-native-form-json/issues"
+  },
+  "homepage": "https://github.com/fermaiasoares/react-native-form-json#readme",
+  "license": "ISC",
   "main": "index.js",
   "scripts": {
     "start": "expo start --dev-client",
@@ -30,5 +40,19 @@
     "@types/styled-components-react-native": "^5.1.3",
     "typescript": "~4.3.5"
   },
-  "private": true
+  "files": [
+    "android",
+    "ios",
+    "src",
+    "package.json",
+    "index.js",
+    "index.tsx"
+  ],
+  "keywords": [
+    "react",
+    "form",
+    "json",
+    "react-native",
+    "form-json"
+  ]
 }
